@@ -2,7 +2,7 @@ from __future__ import annotations
 from enum import Enum, auto
 import math
 
-import utils as u
+import core.utils as u
 
 # CLASS ENUMS FOR SORTING LANG
 class Direction(Enum):
@@ -24,9 +24,9 @@ class Color(Enum):
 FPS = 30
 # GAME_TITLE = "tite"
 
-PLAY_AREA_WIDTH_PX = 512
-PLAY_AREA_HEIGHT_PX = 512
-GRID_TILE_SIZE = 32
+PLAY_AREA_WIDTH_PX = 256
+PLAY_AREA_HEIGHT_PX = 256
+# GRID_TILE_SIZE = 16
 TILE_SIZE_PX = 16
 # SIDEBAR_WIDTH = 0
 

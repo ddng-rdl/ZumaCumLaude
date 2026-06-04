@@ -11,11 +11,9 @@ class Controller:
         self._view = view
 
     def update(self) -> None:
-        # Always track mouse aim
         self._model.aim(px.mouse_x, px.mouse_y)
 
         if self._model.state == GameState.PLAYING:
-            # Left click to fire
             if px.btnp(px.MOUSE_BUTTON_LEFT):
                 self._model.fire()
 

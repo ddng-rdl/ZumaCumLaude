@@ -26,7 +26,7 @@ class Shooter:
         self.y = c.WINDOW_HEIGHT / 2
         self._fire_timer = 0.0
         self.direction: tuple[float, float] = (0.0, -1.0)
-        self.color: c.Color = random.choice(list(c.Color)[:1])  # Phase 1: 1 color
+        self.color: c.Color = random.choice(list(c.Color)[:1])  # 1 COLOR MUNA
  
     def update(self, dt: float) -> None:
         self._fire_timer += dt
@@ -60,7 +60,7 @@ class Model:
         self.shooter = Shooter()
  
         # Spawn queue
-        color = list(c.Color)[0]  # all enemies same color for now
+        color = list(c.Color)[0]  # 1 COLOR MUNA
         self._spawn_queue: list[Enemy] = [BasicEnemy(color) for _ in range(self.ENEMY_COUNT)]
         self._spawn_timer  = 0.0
  
@@ -131,8 +131,8 @@ class Model:
                 if enemy.position_idx >= len(c.PATH_1):
                     continue
                 ex, ey = c.PATH_1[enemy.position_idx]
-                ex_px = ex * c.GRID_TILE_SIZE + c.GRID_TILE_SIZE // 2
-                ey_px = ey * c.GRID_TILE_SIZE + c.GRID_TILE_SIZE // 2
+                ex_px = ex * c.TILE_SIZE_PX + c.TILE_SIZE_PX // 2
+                ey_px = ey * c.TILE_SIZE_PX + c.TILE_SIZE_PX // 2
                 dist = math.hypot(px - ex_px, py - ey_px)
                 if dist <= proj.radius + enemy.square_side_length // 2:
                     if proj.color == enemy.color:
